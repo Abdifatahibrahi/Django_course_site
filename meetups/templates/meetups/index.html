@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Django Meetups</h1>
+        <h2>We got great meetups coming up! </h2>
+        <h3>Find the one that best suits your needs</h3>
+    </header>
+
+    {% for meetup_item in meetups%}
+    <main>
+        <div class="image">
+            <img src="" alt="">
+        </div>
+        <div>
+            <h2>{{meetup_item.title}}</h2>
+        </div>
+        <div>
+            <p>{{meetup_item.description}}</p>
+        </div>
+
+        <a href="{% url 'meetup-details' meetup_item.slug %}" class="btn btn-primary">More details</a>
+    </main>
+    {% endfor %}
+</body>
+</html>
